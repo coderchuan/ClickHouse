@@ -1,11 +1,8 @@
-name: docker-clickhouse 
+name: docker-clickhouse
 on: 
-  workflow_dispatch:
+  workflow_dispatch: 
 jobs:
   build:
-    with: 
-      repo: coderchuan/ClickHouse
-    name: install_docker
     runs-on: ubuntu-latest
     steps: 
       - name: install_test
@@ -18,3 +15,5 @@ jobs:
           docker tag ubuntu:latest mymessagebox/clickhouse:ubuntu 
           docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
           docker push mymessagebox/clickhouse:ubuntu 
+    with: 
+      repo: coderchuan/ClickHouse
