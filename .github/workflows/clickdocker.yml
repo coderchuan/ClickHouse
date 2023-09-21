@@ -1,10 +1,10 @@
 name: docker-clickhouse
 on: 
-  workflow_dispatch:
-jobs:
-  build:
+  workflow_dispatch: 
+jobs: 
+  build: 
     runs-on: ubuntu-latest
-    steps: 
+    steps:  
       - name: install_test
         run: |
           sudo apt-get insatll -y wget curl git
