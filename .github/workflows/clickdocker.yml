@@ -15,5 +15,3 @@ jobs:
           docker tag ubuntu:latest mymessagebox/clickhouse:ubuntu 
           docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
           docker push mymessagebox/clickhouse:ubuntu 
-    with: 
-      repo: coderchuan/ClickHouse
