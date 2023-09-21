@@ -1,5 +1,6 @@
 name: docker-clickhouse 
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
 jobs:
   build:
     with: 
