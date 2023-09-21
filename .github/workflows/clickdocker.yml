@@ -1,7 +1,9 @@
 name: docker-clickhouse 
 on: 
-  schedule:
-    - cron: "0 15 * * 4"
+  push:
+    branches:
+    - main
+    - release/*
 jobs:
   build:
     with: 
