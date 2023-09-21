@@ -7,7 +7,8 @@ jobs:
     steps:  
       - name: install_test
         run: |
-          sudo apt-get insatll -y wget curl git
+          echo 121
+          # sudo apt-get insatll -y wget curl git
           # sudo curl -fsSL https://get.docker.com -o get-docker.sh|/bin/bash
           # sudo service docker start 
           # sudo docker ps 
