@@ -1,6 +1,6 @@
 name: docker-clickhouse
 on: 
-  workflow_dispatch: 
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -8,10 +8,10 @@ jobs:
       - name: install_test
         run: |
           sudo apt-get insatll -y wget curl git
-          sudo curl -fsSL https://get.docker.com -o get-docker.sh|/bin/bash
-          sudo service docker start 
-          sudo docker ps 
-          sudo docker pull ubuntu
-          sudo docker tag ubuntu:latest mymessagebox/clickhouse:ubuntu 
-          sudo docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
-          sudo docker push mymessagebox/clickhouse:ubuntu 
+          # sudo curl -fsSL https://get.docker.com -o get-docker.sh|/bin/bash
+          # sudo service docker start 
+          # sudo docker ps 
+          # sudo docker pull ubuntu
+          # sudo docker tag ubuntu:latest mymessagebox/clickhouse:ubuntu 
+          # sudo docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
+          # sudo docker push mymessagebox/clickhouse:ubuntu 
