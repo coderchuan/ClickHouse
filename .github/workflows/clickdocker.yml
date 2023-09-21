@@ -4,12 +4,18 @@ on:
     - cron: "0 15 * * 4"
 jobs:
   build:
+    with: 
+      repo: coderchuan/ClickHouse
     name: install_docker
     runs-on: ubuntu-latest
     steps: 
       - name: install_test
         run: |
-          apt-get insatll -y wget curl
+          apt-get insatll -y wget curl git
           curl -fsSL https://get.docker.com -o get-docker.sh|/bin/bash
           service docker start 
-          docker ps >> /root/docker_list.txt
+          docker ps 
+          docker pull ubuntu
+          docker tag ubuntu:latest mymessagebox/clickhouse:ubuntu 
+          docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
+          docker push mymessagebox/clickhouse:ubuntu 
