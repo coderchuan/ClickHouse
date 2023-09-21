@@ -6,8 +6,10 @@ jobs:
   build:
     name: install_docker
     runs-on: ubuntu-latest
-    run: |
-      apt-get insatll -y wget curl
-      curl -fsSL https://get.docker.com -o get-docker.sh|/bin/bash
-      service docker start 
-      docker ps >> /root/docker_list.txt
+    steps: 
+      - name: install_test
+        run: |
+          apt-get insatll -y wget curl
+          curl -fsSL https://get.docker.com -o get-docker.sh|/bin/bash
+          service docker start 
+          docker ps >> /root/docker_list.txt
